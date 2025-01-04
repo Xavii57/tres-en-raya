@@ -10,8 +10,8 @@ const Square = ({ children, isSelected, uptdateBoard, index }) => {
   const className = `square ${isSelected ? "is-selected" : ""}`;
 
   const handleClick = () => {
-    uptdateBoard(index)
-  }
+    uptdateBoard(index);
+  };
 
   return (
     <div onClick={handleClick} className={className}>
@@ -20,21 +20,25 @@ const Square = ({ children, isSelected, uptdateBoard, index }) => {
   );
 };
 
+
+
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(TURNS.X);
+  // null es que no hay un ganador, false es que hay un empate
+  const [winner, setWinner] = useState(null);
 
   const uptdateBoard = (index) => {
     // no actualizamos esta posición
     // si ya tiene algo
-    if (board[index]) return
+    if (board[index]) return;
     // actualizar el tablero
-    const newBoard = [...board]
-    newBoard[index] = turn
-    setBoard(newBoard)
+    const newBoard = [...board];
+    newBoard[index] = turn;
+    setBoard(newBoard);
     // cambio de turno
-    const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
-    setTurn(newTurn)
+    const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
+    setTurn(newTurn);
   };
 
   return (
