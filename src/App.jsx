@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Square } from "./components/Square.jsx";
 import { TURNS } from "./constants.js";
-import { checkWinner, checkEndGame } from "./utils/board.js";
+import { checkWinner, checkEndGame } from "./utils/winnerGame.js";
 import { WinnerModal } from "./components/winnerModal.jsx";
+import { BoardModel } from "./components/Board.jsx";
 import confetti from "canvas-confetti";
 
 function App() {
@@ -43,13 +44,7 @@ function App() {
       <h1>Tres en linea</h1>
       <button onClick={resetGame}>Resetear juego</button>
       <section className="game">
-        {board.map((square, index) => {
-          return (
-            <Square key={index} index={index} uptdateBoard={uptdateBoard}>
-              {square}
-            </Square>
-          );
-        })}
+      <BoardModel board={board} uptdateBoard={uptdateBoard} />
       </section>
 
       <section className="turn">
