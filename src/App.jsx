@@ -1,23 +1,10 @@
 import { useState } from "react";
+import { Square } from "./components/Square.jsx";
 import confetti from "canvas-confetti";
 
 const TURNS = {
   X: "x",
   O: "o",
-};
-
-const Square = ({ children, isSelected, uptdateBoard, index }) => {
-  const className = `square ${isSelected ? "is-selected" : ""}`;
-
-  const handleClick = () => {
-    uptdateBoard(index);
-  };
-
-  return (
-    <div onClick={handleClick} className={className}>
-      {children}
-    </div>
-  );
 };
 
 const WINNER_COMBOS = [
