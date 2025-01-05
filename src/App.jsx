@@ -3,7 +3,6 @@ import { Square } from "./components/Square.jsx";
 import { TURNS, WINNER_COMBOS } from "./constants.js";
 import confetti from "canvas-confetti";
 
-
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(TURNS.X);
@@ -36,8 +35,8 @@ function App() {
     // revisamos si hay un empate
     // si no hay más espacios vacíos
     // en el tablero
-    return newBoard.every((square) => square !== null)
-  } 
+    return newBoard.every((square) => square !== null);
+  };
 
   const uptdateBoard = (index) => {
     // no actualizamos esta posición
@@ -53,7 +52,7 @@ function App() {
     // revisar si hay un ganador
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
-      confetti()
+      confetti();
       setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
       setWinner(false);
