@@ -84,6 +84,11 @@ body {
 .square.is-selected {
   color: #fff;
   background: #09f;
+  font-size: 38px;
+}
+
+.turn .square {
+  font-size: 38px;
 }
 
 .winner {
