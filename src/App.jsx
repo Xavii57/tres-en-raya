@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Square } from "./components/Square.jsx";
 import { TURNS } from "./constants.js";
-import { checkWinner } from "./utils/board.js";
+import { checkWinner, checkEndGame } from "./utils/board.js";
 import { WinnerModal } from "./components/winnerModal.jsx";
 import confetti from "canvas-confetti";
 
@@ -15,13 +15,6 @@ function App() {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
-  };
-
-  const checkEndGame = (newBoard) => {
-    // revisamos si hay un empate
-    // si no hay más espacios vacíos
-    // en el tablero
-    return newBoard.every((square) => square !== null);
   };
 
   const uptdateBoard = (index) => {
