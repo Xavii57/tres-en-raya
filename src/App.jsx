@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Square } from "./components/Square.jsx";
-import { TURNS, WINNER_COMBOS } from "./constants.js";
+import { TURNS } from "./constants.js";
+import { checkWinner } from "./utils/board.js";
 import confetti from "canvas-confetti";
 
 function App() {
@@ -8,22 +9,6 @@ function App() {
   const [turn, setTurn] = useState(TURNS.X);
   // null es que no hay un ganador, false es que hay un empate
   const [winner, setWinner] = useState(null);
-
-  const checkWinner = (boardToCheck) => {
-    // revisar todas la combinaciones ganadoras
-    for (const combo of WINNER_COMBOS) {
-      const [a, b, c] = combo;
-      if (
-        boardToCheck[a] && // o => x u o
-        boardToCheck[a] === boardToCheck[b] &&
-        boardToCheck[a] === boardToCheck[c]
-      ) {
-        return boardToCheck[a]; // x u o
-      }
-    }
-    // si no hay ganador
-    return null;
-  };
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
