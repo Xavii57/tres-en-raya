@@ -54,7 +54,9 @@ function App() {
   return (
     <main className='board'>
       <h1>Tres en linea</h1>
-      <button onClick={resetGame}>Resetear juego</button>
+      <button className='' onClick={resetGame}>
+        Resetear juego
+      </button>
       <section className='game'>
         <BoardModel board={board} uptdateBoard={uptdateBoard} />
       </section>

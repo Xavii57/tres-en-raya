@@ -16,9 +16,11 @@
 }
 
 body {
-  margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -29,15 +31,15 @@ body {
   box-sizing: border-box;
 }
 
-.board {
-  width: fit-content;
-  margin: 40px auto;
-  text-align: center;
-}
-
 .board h1 {
   color: #eee;
-  margin-bottom: 16px;
+  text-align: center;
+  margin: 30px auto 50%;
+}
+
+.board {
+  width: fit-content;
+  text-align: center;
 }
 
 .board button {
