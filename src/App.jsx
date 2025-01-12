@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { Square } from './components/Square.jsx';
 import { TURNS } from './constants.js';
 import { checkWinner, checkEndGame } from './utils/winnerGame.js';
