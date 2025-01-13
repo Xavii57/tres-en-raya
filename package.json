@@ -23,9 +23,6 @@
     "vite": "^6.0.5"
   },
   "eslintConfig": {
-    "extends": "./node_modules/standard/esLintrc.json",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    }
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
